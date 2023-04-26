@@ -1,0 +1,42 @@
+The description for Event ID 0 from source RCS1.Roblox.Configuration.Service cannot be found. Either the component that raises this event is not installed on your local computer or the installation is corrupted. You can install or repair the component on the local computer.
+
+If the event originated on another computer, the display information had to be saved with the event.
+
+The following information was included with the event: 
+
+[18] System.TypeInitializationException: The type initializer for 'Roblox.Caching.CacheFactory' threw an exception. ---> System.TypeInitializationException: The type initializer for 'Roblox.Caching.LocalCache' threw an exception. ---> System.Security.SecurityException: Requested registry access is not allowed.
+   at System.ThrowHelper.ThrowSecurityException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.OpenSubKey(String name, Boolean writable)
+   at System.Diagnostics.PerformanceCounterLib.CreateRegistryEntry(String categoryName, PerformanceCounterCategoryType categoryType, CounterCreationDataCollection creationData, Boolean& iniRegistered)
+   at System.Diagnostics.PerformanceCounterLib.RegisterCategory(String categoryName, PerformanceCounterCategoryType categoryType, String categoryHelp, CounterCreationDataCollection creationData)
+   at System.Diagnostics.PerformanceCounterCategory.Create(String categoryName, String categoryHelp, PerformanceCounterCategoryType categoryType, CounterCreationDataCollection counterData)
+   at Roblox.Caching.LocalCache..cctor() in C:\Roblox-Sorted\Branches\La\Assemblies\Caching\Roblox.Caching\LocalCache.cs:line 52
+   --- End of inner exception stack trace ---
+   at Roblox.Caching.LocalCache..ctor(Boolean replicate)
+   at Roblox.Caching.DotNet.LocalDotNetCache..ctor(Boolean replicate) in C:\Roblox-Sorted\Branches\La\Assemblies\Caching\Roblox.Caching\DotNet\LocalDotNetCache.cs:line 16
+   at Roblox.Caching.CacheFactory..cctor() in C:\Roblox-Sorted\Branches\La\Assemblies\Caching\Roblox.Caching\CacheFactory.cs:line 14
+   --- End of inner exception stack trace ---
+   at Roblox.Caching.CacheFactory.getCacheForEntity(CacheInfo cacheInfo) in C:\Roblox-Sorted\Branches\La\Assemblies\Caching\Roblox.Caching\CacheFactory.cs:line 17
+   at Roblox.Caching.CacheManager.GetEntityFromCacheByIDLookup[TIndex,TEntity](CacheInfo cacheInfo, String lookup, Func`1 getter) in C:\Roblox-Sorted\Branches\La\Assemblies\Caching\Roblox.Caching\CacheManager.cs:line 138
+   at Roblox.Api.ControlPlane.Entities.Service.GetByName(String name)
+   at Roblox.Api.ControlPlane.Authority.ServiceIsEnabled(String serviceName)
+   at Roblox.ApiV2.Operation.Execute() in C:\Roblox-Sorted\Branches\La\Assemblies\Roblox.Services\Roblox.ApiV2\Operation.cs:line 128
+   at Roblox.ApiV2.ApiControllerBase.ExecuteOperationNoAuthorization[T](IResultOperation`1 operation) in C:\Roblox-Sorted\Branches\La\Assemblies\Roblox.Services\Roblox.ApiV2\ApiControllerBase.cs:line 141
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass24_0.<InvokeActionMethodWithFilters>b__0()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.ExecuteCore()
+   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c.<.cctor>b__15_0(IAsyncResult asyncResult, Action action)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+The message resource is present but the message was not found in the message table
