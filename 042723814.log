@@ -1,0 +1,37 @@
+[InvalidOperationException: The ConnectionString property has not been initialized.]
+   System.Data.SqlClient.SqlConnection.PermissionDemand() +7167361
+   System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection) +32
+   System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions) +315
+   System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry) +128
+   System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry) +265
+   System.Data.SqlClient.SqlConnection.Open() +133
+   Roblox.Mssql.Database.Execute(CommandType commandType, String commandText, SqlParameter[] sqlParameters, Action`1 action, Nullable`1 commandTimeout, Nullable`1 applicationIntent)
+   Roblox.Mssql.<>c__DisplayClass2_0.<Execute>b__0()
+   Roblox.Sentinels.ExecutionCircuitBreakerBase.Execute(Action action)
+   Roblox.Mssql.GuardedDatabase.Execute(CommandType commandType, String commandText, SqlParameter[] sqlParameters, Action`1 action, Nullable`1 commandTimeout, Nullable`1 applicationIntent)
+   Roblox.Mssql.Database.ExecuteReader(String commandText, SqlParameter[] sqlParameters, CommandType commandType, Nullable`1 commandTimeout, Nullable`1 applicationIntent)
+   Roblox.Platform.Infrastructure.ServerFactory.GetAllServerTypesWithNoCaching()
+   Roblox.Platform.Infrastructure.InfrastructureCache.FetchItem(String key, TimeSpan cacheDuration, Func`1 getter)
+   Roblox.Devops.Site.Controllers.TestController.GetAllServerTypesTest()
+   lambda_method(Closure , ControllerBase , Object[] ) +87
+   System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters) +35
+   System.Web.Mvc.Async.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState) +39
+   System.Web.Mvc.Async.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult) +77
+   System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult) +42
+   System.Web.Mvc.Async.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0() +80
+   System.Web.Mvc.Async.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2() +396
+   System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult) +42
+   System.Web.Mvc.Async.<>c__DisplayClass3_6.<BeginInvokeAction>b__4() +50
+   System.Web.Mvc.Async.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult) +188
+   System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult) +38
+   System.Web.Mvc.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState) +29
+   System.Web.Mvc.Async.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult) +73
+   System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult) +52
+   System.Web.Mvc.Async.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult) +39
+   System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult) +38
+   System.Web.Mvc.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState) +43
+   System.Web.Mvc.Async.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult) +73
+   System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult) +38
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +426
+   System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step) +172
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +158
