@@ -1,0 +1,51 @@
+System.AggregateException: One or more errors occurred. ---> System.ArgumentException: No endpoints specified
+Parameter name: configuration
+   at StackExchange.Redis.ConnectionMultiplexer.CreateMultiplexer(Object configuration)
+   at StackExchange.Redis.ConnectionMultiplexer.<ConnectAsync>d__73.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at Roblox.Redis.DefaultConnectionBuilder.<CreateConnectionMultiplexerAsync>d__0.MoveNext() in C:\Roblox\2019-Web-Platform\Assemblies\Redis\Roblox.Redis\DefaultConnectionBuilder.cs:line 11
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at Roblox.Redis.SwitchingConnectionBuilder.<CreateConnectionMultiplexerAsync>d__4.MoveNext() in C:\Roblox\2019-Web-Platform\Assemblies\Redis\Roblox.Redis\SwitchingConnectionBuilder.cs:line 35
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks, Int32 millisecondsTimeout)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks)
+   at Roblox.Redis.RedisClient.ChangeMultiplexers(String[] redisEndpoints) in C:\Roblox\2019-Web-Platform\Assemblies\Redis\Roblox.Redis\RedisClient.cs:line 113
+   at Roblox.Redis.RedisClient..ctor(ICounterRegistry counterRegistry, IEnumerable`1 redisEndpoints, String performanceMonitorCategory, Action`1 exceptionHandler, RedisClientOptions redisClientOptions) in C:\Roblox\2019-Web-Platform\Assemblies\Redis\Roblox.Redis\RedisClient.cs:line 28
+   at Roblox.Caching.RedisInvalidationSettingsProvider.GetPubSubHandlesFromEndpoints(IEnumerable`1 endpoints) in C:\Roblox\2019-Web-Platform\Assemblies\Caching\Roblox.Caching\Caching\RedisInvalidationSettingsProvider.cs:line 185
+   at Roblox.Caching.RedisInvalidationSettingsProvider.GetPubSubHandles() in C:\Roblox\2019-Web-Platform\Assemblies\Caching\Roblox.Caching\Caching\RedisInvalidationSettingsProvider.cs:line 128
+---> (Inner Exception #0) System.ArgumentException: No endpoints specified
+Parameter name: configuration
+   at StackExchange.Redis.ConnectionMultiplexer.CreateMultiplexer(Object configuration)
+   at StackExchange.Redis.ConnectionMultiplexer.<ConnectAsync>d__73.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at Roblox.Redis.DefaultConnectionBuilder.<CreateConnectionMultiplexerAsync>d__0.MoveNext() in C:\Roblox\2019-Web-Platform\Assemblies\Redis\Roblox.Redis\DefaultConnectionBuilder.cs:line 11
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at Roblox.Redis.SwitchingConnectionBuilder.<CreateConnectionMultiplexerAsync>d__4.MoveNext() in C:\Roblox\2019-Web-Platform\Assemblies\Redis\Roblox.Redis\SwitchingConnectionBuilder.cs:line 35<---
+
+---> (Inner Exception #1) System.ArgumentException: No endpoints specified
+Parameter name: configuration
+   at StackExchange.Redis.ConnectionMultiplexer.CreateMultiplexer(Object configuration)
+   at StackExchange.Redis.ConnectionMultiplexer.<ConnectAsync>d__73.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at Roblox.Redis.DefaultConnectionBuilder.<CreateConnectionMultiplexerAsync>d__0.MoveNext() in C:\Roblox\2019-Web-Platform\Assemblies\Redis\Roblox.Redis\DefaultConnectionBuilder.cs:line 11
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at Roblox.Redis.SwitchingConnectionBuilder.<CreateConnectionMultiplexerAsync>d__4.MoveNext() in C:\Roblox\2019-Web-Platform\Assemblies\Redis\Roblox.Redis\SwitchingConnectionBuilder.cs:line 35<---
