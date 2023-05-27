@@ -1,0 +1,58 @@
+System.TypeInitializationException: The type initializer for 'Roblox.Platform.ApiControlPlane.Authority' threw an exception. ---> System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'Roblox.Configuration.Provider' threw an exception. ---> System.Configuration.ConfigurationErrorsException: Configuration system failed to initialize ---> System.PlatformNotSupportedException: Operation is not supported on this platform.
+   at System.Configuration.ClientConfigPaths..ctor(String exePath, Boolean includeUserConfig)
+   at System.Configuration.ClientConfigPaths.GetPaths(String exePath, Boolean includeUserConfig)
+   at System.Configuration.ClientConfigurationHost.get_ConfigPaths()
+   at System.Configuration.ClientConfigurationHost.GetStreamName(String configPath)
+   at System.Configuration.ClientConfigurationHost.get_IsAppConfigHttp()
+   at System.Configuration.ClientConfigurationSystem..ctor()
+   at System.Configuration.ConfigurationManager.EnsureConfigurationSystem()
+   --- End of inner exception stack trace ---
+   at System.Configuration.ConfigurationManager.EnsureConfigurationSystem()
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at Roblox.Configuration.Provider..cctor() in C:\Roblox\2019-Web-Platform\Assemblies\Configuration\Roblox.Configuration\Implementation\Provider\Provider.cs:line 41
+   --- End of inner exception stack trace ---
+   at Roblox.Configuration.Provider..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+   at System.SecurityUtils.SecureCreateInstance(Type type, Object[] args, Boolean allowNonPublic)
+   at System.Configuration.ApplicationSettingsBase.get_Initializer()
+   at System.Configuration.ApplicationSettingsBase.CreateSetting(PropertyInfo propInfo)
+   at System.Configuration.ApplicationSettingsBase.EnsureInitialized()
+   at System.Configuration.ApplicationSettingsBase.get_Properties()
+   at System.Configuration.SettingsBase.GetPropertyValueByName(String propertyName)
+   at System.Configuration.SettingsBase.get_Item(String propertyName)
+   at System.Configuration.ApplicationSettingsBase.GetPropertyValue(String propertyName)
+   at System.Configuration.ApplicationSettingsBase.get_Item(String propertyName)
+   at Roblox.Api.ControlPlane.Properties.Settings.get_Authority() in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.Api.ControlPlane\Properties\Settings.Designer.cs:line 40
+   at Roblox.Api.ControlPlane.AuthorityFactory.GetAuthorithy() in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.Api.ControlPlane\Factories\AuthorityFactory.cs:line 11
+   at Roblox.Platform.ApiControlPlane.Authority..cctor() in C:\Roblox\2019-Web-Platform\Assemblies\Platform\ApiControlPlane\Roblox.Platform.ApiControlPlane\Authority.cs:line 232
+   --- End of inner exception stack trace ---
+   at Roblox.Platform.ApiControlPlane.Authority..ctor()
+   at Roblox.Platform.ApiControlPlane.AuthorityFactory.GetAuthorithy() in C:\Roblox\2019-Web-Platform\Assemblies\Platform\ApiControlPlane\Roblox.Platform.ApiControlPlane\AuthorityFactory.cs:line 22
+   at Roblox.ApiV2.Operation.Execute(String apiKey) in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.ApiV2\Implementation\Operation.cs:line 46
+   at Roblox.ApiV2.ResultOperation`1.Execute(String apiKey) in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.ApiV2\Implementation\ResultOperation.cs:line 15
+   at Roblox.ApiV2.ApiControllerBase.ExecuteOperation[T](String apiKey, IResultOperation`1 operation) in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.ApiV2\ApiControllerBase.cs:line 83
+   at Roblox.Configuration.Service.Controllers.DefaultController.Execute[T](IResultOperation`1 operation) in C:\Roblox\2019-Web-Platform\Services\Configuration\Roblox.Configuration.Service\Controllers\DefaultController.cs:line 146
+   at Roblox.Configuration.Service.Controllers.DefaultController.GetSettings(GroupNamePaginationRequest request) in C:\Roblox\2019-Web-Platform\Services\Configuration\Roblox.Configuration.Service\Controllers\DefaultController.cs:line 382
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass24_0.<InvokeActionMethodWithFilters>b__0()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.ExecuteCore()
+   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c.<.cctor>b__15_0(IAsyncResult asyncResult, Action action)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
