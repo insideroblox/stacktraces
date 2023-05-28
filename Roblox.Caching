@@ -1,0 +1,37 @@
+System.TypeInitializationException: The type initializer for 'Roblox.Caching.CacheFactory' threw an exception. ---> System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Diagnostics.Debugger.NotifyOfCrossThreadDependencySlow()
+   at System.Diagnostics.Debugger.NotifyOfCrossThreadDependency()
+   at System.Lazy`1.get_Value()
+   at Roblox.Caching.LazyWithRetry`1.get_Value() in C:\Roblox\2019-Web-Platform\Assemblies\Caching\Roblox.Caching\Caching\LazyWithRetry.cs:line 68
+   at Roblox.Caching.LocalCache.GetInstance() in C:\Roblox\2019-Web-Platform\Assemblies\Caching\Roblox.Caching\Caching\LocalCache.cs:line 440
+   at Roblox.Caching.CacheFactory..cctor() in C:\Roblox\2019-Web-Platform\Assemblies\Caching\Roblox.Caching\Caching\CacheFactory.cs:line 18
+   --- End of inner exception stack trace ---
+   at Roblox.Caching.CacheFactory.GetLocalCache()
+   at Roblox.Caching.CacheManager.get_LocalCache() in C:\Roblox\2019-Web-Platform\Assemblies\Caching\Roblox.Caching\Caching\CacheManager.cs:line 49
+   at Roblox.Caching.CacheManager.GetEntityFromCacheByIDLookup[TIndex,TEntity,TDal](ICacheInfo cacheInfo, String entityIdLookup, Func`1 getter) in C:\Roblox\2019-Web-Platform\Assemblies\Caching\Roblox.Caching\Caching\CacheManager.cs:line 143
+   at Roblox.Common.EntityHelper.GetEntityByLookup[TIndex,TDal,TEntity](ICacheInfo cacheInfo, String lookup, Func`1 getter) in C:\Roblox\2019-Web-Platform\Assemblies\Data\Roblox.Data\Common\EntityHelper.cs:line 489
+   at Roblox.Api.ControlPlane.Entities.Service.GetByName(String name) in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.Api.ControlPlane\Entities\Service.cs:line 135
+   at Roblox.Api.ControlPlane.Authority.ServiceIsEnabled(String serviceName) in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.Api.ControlPlane\Implementation\Authority.cs:line 151
+   at Roblox.Platform.ApiControlPlane.Authority.ServiceIsEnabled(String serviceName) in C:\Roblox\2019-Web-Platform\Assemblies\Platform\ApiControlPlane\Roblox.Platform.ApiControlPlane\Authority.cs:line 219
+   at Roblox.Configuration.ConfigurationService.IsEnabled() in C:\Roblox\2019-Web-Platform\Services\Configuration\Roblox.Configuration\ConfigurationService.cs:line 763
+   at Roblox.ApiV2.Operation.Execute(String apiKey) in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.ApiV2\Implementation\Operation.cs:line 47
+   at Roblox.ApiV2.ResultOperation`1.Execute(String apiKey) in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.ApiV2\Implementation\ResultOperation.cs:line 15
+   at Roblox.ApiV2.ApiControllerBase.ExecuteOperation[T](String apiKey, IResultOperation`1 operation) in C:\Roblox\2019-Web-Platform\Assemblies\Roblox.Services\Roblox.ApiV2\ApiControllerBase.cs:line 83
+   at Roblox.Configuration.Service.Controllers.DefaultController.Execute[T](IResultOperation`1 operation) in C:\Roblox\2019-Web-Platform\Services\Configuration\Roblox.Configuration.Service\Controllers\DefaultController.cs:line 146
+   at Roblox.Configuration.Service.Controllers.DefaultController.GetSettings(GroupNamePaginationRequest request) in C:\Roblox\2019-Web-Platform\Services\Configuration\Roblox.Configuration.Service\Controllers\DefaultController.cs:line 382
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass24_0.<InvokeActionMethodWithFilters>b__0()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.ExecuteCore()
+   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c.<.cctor>b__15_0(IAsyncResult asyncResult, Action action)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
